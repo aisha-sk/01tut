@@ -11,3 +11,75 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+Header {
+  display: flex;
+  justify-content:center;
+  margin-top: 30px;
+  background-color: rgb(254, 212, 219);
+  border-radius: 12px;
+  margin-left: 30px;
+  margin-right: 30px;
+  flex-wrap: wrap;
+  
+}
+
+Footer {
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:40px;
+  width:100%;
+  background-color: rgb(250, 209, 255);
+  text-align:center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+Content {
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-color:rgb(101, 43, 53)
+}
+
+ul {
+  width: 100%;
+  list-style:none;
+  padding: 20px;
+}
+
+.item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding:20px;
+  margin: 8px;
+  background-color: rgb(212, 211, 211);
+  margin-right: 50px;
+}
+
+.item input[type="checkbox"]{
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin-right: 16px;
+}
+.item > label {
+  font-size: 20px;
+  flex-grow: 1;
+}
+
+.item svg {
+  width:40px;
+  height: 23px;
+  cursor: pointer;
+  font-size:16px;
+  color: rgb(151, 151, 241);
+}
+.item svg:focus,
+.item svg:hover {
+  color: rgb(235, 111, 111);
+
+}
