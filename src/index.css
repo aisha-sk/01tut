@@ -83,3 +83,11 @@ ul {
   color: rgb(235, 111, 111);
 
 }
+
+p {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-align:center;
+}
