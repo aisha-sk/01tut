@@ -121,7 +121,8 @@ form > button {
   border-radius:6px;
   width:45px;
   color: rgb(0, 69, 0);
-  background-color:rgb(177, 255, 195)
+  background-color:rgb(177, 255, 195);
+  cursor:pointer;
 }
 
 /* Smartphones (portrait) */
