@@ -3,6 +3,7 @@ import Header from './header'
 import Content from './Content'
 import Footer from './Footer'
 import {useState} from 'react'
+import AddItem from './AddItem'
  
 function App() {
   const [items, setItems] = useState([
@@ -43,6 +44,7 @@ function App() {
 
     <div className="App">
       <Header title="Grocery List" />
+      <AddItem />
       <Content 
       items={items}
       // setItems={setItems}
