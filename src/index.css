@@ -93,3 +93,60 @@ main > p {
   text-align:center;
 }
 
+form {
+
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  margin-top:25px;
+
+}
+
+.addForm input[type='text']{
+  flex-grow:1;
+  cursor:pointer;
+  margin-left:30px;
+  /* margin-right:30px; */
+  height:40px;
+  border-radius:6px;
+  font-size:15px;
+  margin-right:6px;
+  padding-left:10px;
+  background-color:rgb(226, 226, 246);
+}
+
+form > button {
+  margin-right:30px;
+  height:45px;
+  border-radius:6px;
+  width:45px;
+  color: rgb(0, 69, 0);
+  background-color:rgb(177, 255, 195)
+}
+
+/* Smartphones (portrait) */
+@media only screen and (max-width: 320px) {
+  /* Styles */
+  body {
+    margin-right:40px;
+    margin-left:40px;
+  }
+}
+
+/* iPads (portrait and landscape)  */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Styles */
+  body {
+    margin-right:400px;
+    margin-left:400px;
+  }
+}
+
+/* Desktops and laptops  min 1224 */
+@media only screen and (min-width: 1224px) {
+  /* Styles */
+  body {
+    margin-right:300px;
+    margin-left:300px;
+  }
+}
