@@ -32,7 +32,8 @@ Footer {
   width:100%;
   background-color: rgb(250, 209, 255);
   text-align:center;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
 }
 
 Content {
@@ -84,10 +85,11 @@ ul {
 
 }
 
-p {
+main > p {
   display:flex;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
   text-align:center;
 }
+
