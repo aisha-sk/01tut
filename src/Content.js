@@ -1,13 +1,13 @@
 import React from 'react'
 
-import ItemList from './ItemLister'
+import ItemLister from './ItemLister'
 const Content = ({items, handleCheck, handleDelete}) => {
 
 
   return (
     <>
       {items.length ? (
-        <ItemList
+        <ItemLister
           items = {items}
           handleCheck = {handleCheck}
           handleDelete = {handleDelete}
