@@ -73,8 +73,8 @@ ul {
 }
 
 .item svg {
-  width:40px;
-  height: 23px;
+  width:50px;
+  height: 30px;
   cursor: pointer;
   font-size:16px;
   color: rgb(151, 151, 241);
@@ -123,6 +123,10 @@ form > button {
   color: rgb(0, 69, 0);
   background-color:rgb(177, 255, 195);
   cursor:pointer;
+}
+form > button:hover {
+  background-color:darkgreen;
+  color:white;
 }
 
 .searchForm {
