@@ -102,7 +102,7 @@ form {
 
 }
 
-.addForm input[type='text']{
+.addForm input[type='text'] {
   flex-grow:1;
   cursor:pointer;
   margin-left:30px;
@@ -123,6 +123,23 @@ form > button {
   color: rgb(0, 69, 0);
   background-color:rgb(177, 255, 195);
   cursor:pointer;
+}
+
+.searchForm {
+  margin-right: 30px;
+}
+
+.searchForm input[type='text']{
+  flex-grow:1;
+  cursor:pointer;
+  margin-left:30px;
+  /* margin-right:30px; */
+  height:40px;
+  border-radius:6px;
+  font-size:15px;
+  margin-right:6px;
+  padding-left:10px;
+  background-color:rgb(203, 254, 178);
 }
 
 /* Smartphones (portrait) */
