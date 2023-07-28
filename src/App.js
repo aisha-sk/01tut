@@ -40,7 +40,7 @@ function App() {
       } catch (err) {
         setFetchError(err.message); // if there was any error
       } finally {
-        setIsLoading(false); // loading is over
+        setIsLoading(false); // loading is over (initially set to true)
       }
     }
 
