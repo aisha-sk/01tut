@@ -101,7 +101,7 @@ function App() {
         
     /* The apiRequest function is called with the reqUrl and updateOptions as arguments. Inside apiRequest, the fetch function is used to send a network request to the specified URL with the provided options. */
   }
-
+  // to delete an item
   const handleDelete = async (id) => {
     const listItems = items.filter((item) => item.id !== id);
     setItems(listItems);
@@ -110,6 +110,10 @@ function App() {
     const reqUrl = `${API_URL}/${id}`;
     const result = await apiRequest(reqUrl, deleteOptions);
     if (result) setFetchError(result);
+    
+    /* In the handleDelete function, we don't need to specify headers and body because the HTTP DELETE method typically does not require any request body. Unlike the HTTP POST and PUT methods, which often require sending data in the request body to create or update resources, the DELETE method is used to delete a resource, and it usually doesn't need additional data.
+
+    When making a DELETE request, the server identifies the resource to delete based on the URL (in this case, the reqUrl), and it doesn't expect any payload in the request body. Therefore, there's no need to specify headers or body in the deleteOptions. */
   }
 
   const handleSubmit = (e) => {
