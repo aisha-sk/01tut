@@ -12,7 +12,7 @@ import apiRequest from './apiRequest';
 function App() {
   const API_URL = 'http://localhost:4000/items'; 
   // generated via :  npx json-server --watch data/db.json --port 4000
-  
+
   /* This command will start the JSON server and serve the data from the db.json file located in the data folder. The server will run on port 3500. Make sure you have the json-server package installed globally or use npx to run it directly without a global installation.*/
 
   const [items, setItems] = useState([]);
@@ -21,25 +21,30 @@ function App() {
   const [fetchError, setFetchError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
+  /*useEffect is a hook in React that allows you to perform side effects in functional components. Side effects are actions that affect the outside world, such as fetching data from an API, updating the DOM, subscribing to events, or performing cleanup operations. 
+  
+  It runs after every render by default. If you want to control when the useEffect runs, you can pass an array of dependencies as the second argument. When any of the dependencies change, the useEffect will be called again. If the dependencies array is empty, the useEffect will only run once after the initial render.*/
+
   useEffect(() => {
 
-    
+    // to get the items from db.json 
     const fetchItems = async () => {
       try {
         const response = await fetch(API_URL);
+        // after fetching finishes:
         if (!response.ok) throw Error('Did not receive expected data');
-        const listItems = await response.json();
+        const listItems = await response.json(); // gets all the data back
         setItems(listItems);
         setFetchError(null);
         
       } catch (err) {
-        setFetchError(err.message);
+        setFetchError(err.message); // if there was any error
       } finally {
-        setIsLoading(false);
+        setIsLoading(false); // loading is over
       }
     }
 
-    setTimeout(() => fetchItems(), 2000);
+    setTimeout(() => fetchItems(), 2500); // to simulate time being taken to fetch
 
   }, [])
 
