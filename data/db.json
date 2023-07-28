@@ -1,24 +1,14 @@
 {
   "items": [
     {
-      "checked": false,
       "id": 1,
-      "item": "Banana"
+      "checked": true,
+      "item": "Item 1"
     },
     {
-      "checked": false,
       "id": 2,
-      "item": "apple"
-    },
-    {
-      "id": 3,
       "checked": false,
-      "item": "Bread"
-    },
-    {
-      "id": 4,
-      "checked": false,
-      "item": "Buns"
+      "item": "item 4"
     }
   ]
 }
