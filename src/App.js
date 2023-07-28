@@ -1,3 +1,6 @@
+// adding explanations along the code :)
+
+// imports which consist of the JSX (js + xml code)
 import Header from './header';
 import SearchItem from './SearchItem';
 import AddItem from './AddItem';
@@ -7,7 +10,10 @@ import { useState, useEffect } from 'react';
 import apiRequest from './apiRequest';
 
 function App() {
-  const API_URL = 'http://localhost:4000/items';
+  const API_URL = 'http://localhost:4000/items'; 
+  // generated via :  npx json-server --watch data/db.json --port 4000
+  
+  /* This command will start the JSON server and serve the data from the db.json file located in the data folder. The server will run on port 3500. Make sure you have the json-server package installed globally or use npx to run it directly without a global installation.*/
 
   const [items, setItems] = useState([]);
   const [newItem, setNewItem] = useState('');
@@ -17,6 +23,7 @@ function App() {
 
   useEffect(() => {
 
+    
     const fetchItems = async () => {
       try {
         const response = await fetch(API_URL);
