@@ -1,4 +1,4 @@
-// adding explanations along the code :)
+// adding explanations along the code :) 
 
 // imports which consist of the JSX (js + xml code)
 import Header from './header';
@@ -13,7 +13,7 @@ function App() {
   const API_URL = 'http://localhost:4000/items'; 
   // generated via :  npx json-server --watch data/db.json --port 4000
 
-  /* This command will start the JSON server and serve the data from the db.json file located in the data folder. The server will run on port 3500. Make sure you have the json-server package installed globally or use npx to run it directly without a global installation.*/
+  /* This command will start the JSON server and serve the data from the db.json file located in the data folder. The server will run on port 3500. Make sure that the json-server package is installed globally or use npx to run it directly without a global installation.*/
 
   const [items, setItems] = useState([]);
   const [newItem, setNewItem] = useState('');
@@ -48,12 +48,17 @@ function App() {
 
   }, [])
 
+  // to add an item to the list
+
   const addItem = async (item) => {
-    const id = items.length ? items[items.length - 1].id + 1 : 1;
-    const myNewItem = { id, checked: false, item };
-    const listItems = [...items, myNewItem];
+    const id = items.length ? items[items.length - 1].id + 1 : 1; 
+    // to calculate the id value of the new item. if items.length > 0 then it sets it, as the last items id value + 1, else just 1 since it would be the first element.
+
+    const myNewItem = { id, checked: false, item }; // new object 
+    const listItems = [...items, myNewItem]; // adding new object to old Items list
     setItems(listItems);
 
+    // The POST method is used when we add new items 
     const postOptions = {
       method: 'POST',
       headers: {
@@ -63,6 +68,14 @@ function App() {
     }
     const result = await apiRequest(API_URL, postOptions);
     if (result) setFetchError(result);
+
+    /* 
+    JSON.stringify() is a built-in JavaScript function that converts a JavaScript object or value into a JSON string representation. It serializes the object, converting it into a string format that can be easily transmitted or stored.
+
+    In the context of our code, JSON.stringify(myNewItem) is used to convert the myNewItem object into a JSON string before sending it in the request body during the API POST request. This is necessary because when making an HTTP request, the data is typically sent as a string, and JSON is a common format used for data interchange.*/
+
+    /* in summary, the setItems and listItems are used to update the local state with the newly added item and reflect the change in the UI before communicating with the backend server to add the item permanently using the POST request. This allows the UI to be responsive and immediately show the new item without waiting for the server response.*/
+
   }
 
   const handleCheck = async (id) => {
