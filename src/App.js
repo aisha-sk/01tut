@@ -48,7 +48,7 @@ function App() {
 
   }, [])
 
-  // to add an item to the list
+  // to add an item to the list:
 
   const addItem = async (item) => {
     const id = items.length ? items[items.length - 1].id + 1 : 1; 
@@ -77,22 +77,29 @@ function App() {
     /* in summary, the setItems and listItems are used to update the local state with the newly added item and reflect the change in the UI before communicating with the backend server to add the item permanently using the POST request. This allows the UI to be responsive and immediately show the new item without waiting for the server response.*/
 
   }
-
+  // adds/removes checks
   const handleCheck = async (id) => {
+
+    // if the id is equal to that of the element we're looking at, change the check property to opposite of what it is. this is a ternary statement
+    // condtion ? if true : if false
     const listItems = items.map((item) => item.id === id ? { ...item, checked: !item.checked } : item);
     setItems(listItems);
 
+    //filters out the element that we just updated so we can PATCH it (method used to modify existing data)
     const myItem = listItems.filter((item) => item.id === id);
     const updateOptions = {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ checked: myItem[0].checked })
+      body: JSON.stringify({ checked: myItem[0].checked }) 
+      //ONLY  updating the checked key
     };
-    const reqUrl = `${API_URL}/${id}`;
+    const reqUrl = `${API_URL}/${id}`; // eg: http://localhost:4000/items/2 
     const result = await apiRequest(reqUrl, updateOptions);
     if (result) setFetchError(result);
+        
+    /* The apiRequest function is called with the reqUrl and updateOptions as arguments. Inside apiRequest, the fetch function is used to send a network request to the specified URL with the provided options. */
   }
 
   const handleDelete = async (id) => {
